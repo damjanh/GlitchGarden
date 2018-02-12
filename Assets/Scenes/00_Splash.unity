@@ -599,6 +599,7 @@ MonoBehaviour:
   levelMusicArray:
   - {fileID: 0}
   - {fileID: 8300000, guid: 72e1eafdff5620340b72b6b565beebde, type: 3}
+  - {fileID: 8300000, guid: ddaa27bf7210db440b0405380425e3c1, type: 3}
 --- !u!4 &1794517174
 Transform:
   m_ObjectHideFlags: 0
