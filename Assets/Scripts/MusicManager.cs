@@ -20,12 +20,14 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded(int level) {
-		AudioClip thisLevelMusic = levelMusicArray[level];
-		// If we have an AudioClip associated with a level index play it.
-		if (thisLevelMusic != null) {
-			audioSource.clip = thisLevelMusic;
-			audioSource.loop = true;
-			audioSource.Play();
+		if (level < levelMusicArray.Length) {
+			AudioClip thisLevelMusic = levelMusicArray[level];
+			// If we have an AudioClip associated with a level index play it.
+			if (thisLevelMusic != null) {
+				audioSource.clip = thisLevelMusic;
+				audioSource.loop = true;
+				audioSource.Play();
+			}
 		}
 	}
 }

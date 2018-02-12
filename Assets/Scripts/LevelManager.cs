@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-	public float autoLoadNextLevel = 3f;
+	public float autoLoadNextLevel = 0f;
 
 	void Start()
 	{
-		Invoke("LoadNextLevel", autoLoadNextLevel);
+		if (autoLoadNextLevel > 0) {
+			Invoke("LoadNextLevel", autoLoadNextLevel);
+		}
 	}
 
 	public void LoadLevel (string levelName)
