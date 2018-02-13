@@ -26,8 +26,15 @@ public class MusicManager : MonoBehaviour {
 			if (thisLevelMusic != null) {
 				audioSource.clip = thisLevelMusic;
 				audioSource.loop = true;
+				audioSource.volume = PlayerPrefsManager.GetMasterVolume();
 				audioSource.Play();
 			}
+		}
+	}
+
+	public void SetVoulume(float newVolume) {
+		if (audioSource != null) {
+			audioSource.volume = newVolume;
 		}
 	}
 }

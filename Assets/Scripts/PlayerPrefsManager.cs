@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PlayerPrefsManager : MonoBehaviour {
 
-	const string MASTER_VOLUME_KEY = "master_volume";
-	const string DIFICULTY_KEY = "dificulty";
-	const string LEVEL_KEY = "level_unlocked_";
+	private const string MASTER_VOLUME_KEY = "master_volume";
+	private const string DIFFICULTY_KEY = "difficulty";
+	private const string LEVEL_KEY = "level_unlocked_";
 
-	public static void SetMasterVoluem(float volume) {
-		if (volume > 0f && volume < 1f) {
+	// Defaults
+	public const float DEFAULT_VOLUME = 0.8f;
+	public const int DEFAULT_DIFFICULTY = 2;
+
+	public static void SetMasterVolume(float volume) {
+		if (volume >= 0f && volume <= 1f) {
 			PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
 		} else {
 			Debug.LogError("Master volume out of range.");
@@ -18,7 +22,11 @@ public class PlayerPrefsManager : MonoBehaviour {
 	}
 
 	public static float GetMasterVolume() {
-		return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
+		if (PlayerPrefs.HasKey(MASTER_VOLUME_KEY)) {
+			return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
+		} else {
+			return DEFAULT_VOLUME;
+		}
 	}
 
 	public static void UnlockLevel(int level) {
@@ -38,15 +46,19 @@ public class PlayerPrefsManager : MonoBehaviour {
 		}
 	}
 
-	public static void SetDificulty(float dificulty) {
-		if (dificulty >= 0f && dificulty <= 1f) {
-			PlayerPrefs.SetFloat(DIFICULTY_KEY, dificulty);
+	public static void SetDifficulty(int difficulty) {
+		if (difficulty >= 0 && difficulty <= 3) {
+			PlayerPrefs.SetInt(DIFFICULTY_KEY, difficulty);
 		} else {
-			Debug.LogError("Dificulty out of range.");
+			Debug.LogError("Difficulty out of range.");
 		}
 	}
 
-	public static float GetDificulty() {
-		return PlayerPrefs.GetFloat(DIFICULTY_KEY);
+	public static int GetDifficulty() {
+		if (PlayerPrefs.HasKey(DIFFICULTY_KEY)) {
+			return PlayerPrefs.GetInt(DIFFICULTY_KEY);
+		} else {
+			return DEFAULT_DIFFICULTY;
+		}
 	}
 }
