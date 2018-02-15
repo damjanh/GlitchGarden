@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1860883000}
-  difficultySlider: {fileID: 0}
+  difficultySlider: {fileID: 1380115576}
   levelManager: {fileID: 1686319033}
 --- !u!4 &948814912
 Transform:
