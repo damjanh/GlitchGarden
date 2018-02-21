@@ -36,9 +36,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4356294131336026}
   - component: {fileID: 95935008196562844}
-  - component: {fileID: 114846502797259084}
   - component: {fileID: 61787115750650858}
   - component: {fileID: 114424591049966508}
+  - component: {fileID: 114846502797259084}
   - component: {fileID: 114943697843799196}
   m_Layer: 0
   m_Name: Lizard
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1724282902487170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4898707471525552}
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f20aec5e2de3b4da8595c564e08bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 120
 --- !u!212 &212871056679998358
 SpriteRenderer:
   m_ObjectHideFlags: 1

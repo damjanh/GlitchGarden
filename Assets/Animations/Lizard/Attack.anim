@@ -341,6 +341,6 @@ AnimationClip:
     functionName: StrikeTarget
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 5
+    floatParameter: 50
     intParameter: 0
     messageOptions: 0

@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4713015656617270}
   - component: {fileID: 95281226983670378}
-  - component: {fileID: 114982098187717128}
   - component: {fileID: 61084837009185684}
   - component: {fileID: 114882981469039368}
+  - component: {fileID: 114982098187717128}
   - component: {fileID: 114799239883615328}
   m_Layer: 0
   m_Name: Fox
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304779569902954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4716904250785380}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f20aec5e2de3b4da8595c564e08bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 50
 --- !u!114 &114882981469039368
 MonoBehaviour:
   m_ObjectHideFlags: 1

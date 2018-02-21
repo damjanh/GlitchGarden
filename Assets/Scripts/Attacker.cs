@@ -27,10 +27,6 @@ public class Attacker : MonoBehaviour {
 		transform.Translate(Vector3.left * currentSpeed * Time.deltaTime);
 	}
 
-	void OnTriggerEnter2D() {
-		Debug.Log(name + " trigger enter.");
-	}
-
 	public void SetSpeed(float speed) {
 		currentSpeed = speed;
 	}
