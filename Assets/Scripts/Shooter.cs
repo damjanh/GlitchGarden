@@ -10,16 +10,49 @@ public class Shooter : MonoBehaviour {
 
 	private GameObject parent;
 
+	private Animator animator;
+
+	private Spawner laneSpawner;
+
 	void Start() {
+		animator = GetComponent<Animator>();
+
 		parent = GameObject.Find("Projectiles");
 		if (parent == null) {
 			parent = new GameObject("Projectiles");
 		}
+
+		SetLaneSpawner();
+	}
+
+	void Update() {
+		animator.SetBool("IsAttacking", IsAttackerAheadInLane());
 	}
 
 	private void Fire() {
 		GameObject newProjectile = Instantiate(projectile) as GameObject;
 		newProjectile.transform.parent = parent.transform;
 		newProjectile.transform.position = gun.transform.position;
+	}
+
+	bool IsAttackerAheadInLane() {
+		if (laneSpawner.transform.childCount > 0) {
+			foreach (Transform child in laneSpawner.transform) {
+				if (child.transform.position.x > transform.position.x) {
+					return true;
+				}
+			}
+		} 
+		return false;
+	}
+
+	void SetLaneSpawner() {
+		Spawner[] spawners = GameObject.FindObjectsOfType<Spawner>();
+		foreach(Spawner spawner in spawners) {
+			if (spawner.transform.position.y == transform.position.y) {
+				laneSpawner = spawner;
+			}
+		}
+		Debug.LogError(name + ": can't find spawner in lane!");
 	}
 }

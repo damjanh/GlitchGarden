@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour {
 
-	private GameObject parent;
-
 	public GameObject[] attackerPrefabArray;
-
-	void Start () {
-		parent = GameObject.Find("Attackers");
-		if (parent == null) {
-			parent = new GameObject("Attackers");
-		}
-	}
 
 	void Update() {
 		foreach(GameObject attacker in attackerPrefabArray) {
@@ -26,7 +17,7 @@ public class Spawner : MonoBehaviour {
 	void Spawn(GameObject attackerPrefab) {
 		GameObject attacker = Instantiate(attackerPrefab) as GameObject;
 		if (attacker != null) {
-			attacker.transform.parent = parent.transform;
+			attacker.transform.parent = transform;
 			attacker.transform.position = transform.position;
 		}
 	}
