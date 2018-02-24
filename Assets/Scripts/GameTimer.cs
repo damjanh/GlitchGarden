@@ -31,15 +31,27 @@ public class GameTimer : MonoBehaviour {
 	void Update () {
 		slider.value = Time.timeSinceLevelLoad / levelTimeSeconds;
 		if (!isEnd && Time.timeSinceLevelLoad >= levelTimeSeconds) {
-			isEnd = true;
+			winCondition();
+		}
+	}
+
+	private void winCondition() {
+		isEnd = true;
 			audioSource.volume = PlayerPrefsManager.GetMasterVolume();
 			audioSource.Play();
 			winText.SetActive(true);
 			Invoke("LoadNextLevel", audioSource.clip.length);
-		}
+			destroyCharacters();
 	}
 
 	private void LoadNextLevel() {
 		levelManager.LoadNextLevel();
+	}
+
+	private void destroyCharacters() {
+		GameObject[] characters = GameObject.FindGameObjectsWithTag("Character");
+		foreach (GameObject character in characters) {
+			Destroy(character);
+		}
 	}
 }
