@@ -35,4 +35,8 @@ public class StarDisplay : MonoBehaviour {
 	void UpdateUI() {
 		starText.text = stars.ToString();
 	}
+
+	public int GetStars() {
+		return stars;
+	}
 }
