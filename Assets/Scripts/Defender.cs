@@ -6,6 +6,8 @@ public class Defender : MonoBehaviour {
 	
 	private StarDisplay starDisplay;
 
+	public int cost = 100;
+
 	void Start() {
 		starDisplay = GameObject.FindObjectOfType<StarDisplay>();
 	}

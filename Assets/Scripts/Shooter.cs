@@ -22,7 +22,7 @@ public class Shooter : MonoBehaviour {
 			parent = new GameObject("Projectiles");
 		}
 
-		SetLaneSpawner();
+		laneSpawner = FindCorrectLaneSpawner();
 	}
 
 	void Update() {
@@ -46,13 +46,14 @@ public class Shooter : MonoBehaviour {
 		return false;
 	}
 
-	void SetLaneSpawner() {
+	private Spawner FindCorrectLaneSpawner() {
 		Spawner[] spawners = GameObject.FindObjectsOfType<Spawner>();
 		foreach(Spawner spawner in spawners) {
 			if (spawner.transform.position.y == transform.position.y) {
-				laneSpawner = spawner;
+				return spawner;
 			}
 		}
 		Debug.LogError(name + ": can't find spawner in lane!");
+		return null;
 	}
 }
