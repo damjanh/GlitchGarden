@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Button : MonoBehaviour {
@@ -47,6 +48,10 @@ public class Button : MonoBehaviour {
 				// Nothing
 				break;
 		}
+
+		// Set cost
+		Text text = GetComponentInChildren<Text>();
+		text.text = spawnsDefender.cost.ToString(); 
 	}
 	
 	// Update is called once per frame
