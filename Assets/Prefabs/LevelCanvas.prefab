@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 82982694961564566}
   - component: {fileID: 114920587218295466}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: GameTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac094dfe7fe12b7459c3744c678398d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTimeSeconds: 5
+  levelTimeSeconds: 60
 --- !u!222 &222045366373749292
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -796,7 +796,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224773054352570132}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -814,7 +814,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224773054352570132}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -835,7 +835,7 @@ RectTransform:
   - {fileID: 224120537678096588}
   - {fileID: 224927155782656426}
   m_Father: {fileID: 224773054352570132}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -853,7 +853,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224773054352570132}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -871,10 +871,10 @@ RectTransform:
   m_LocalScale: {x: 0.0075, y: 0.0075, z: 0}
   m_Children:
   - {fileID: 224030672646890058}
+  - {fileID: 224699773889293216}
   - {fileID: 224512797319217944}
   - {fileID: 224525081001637898}
   - {fileID: 224599271836870786}
-  - {fileID: 224699773889293216}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
