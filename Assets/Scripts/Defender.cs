@@ -3,5 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Defender : MonoBehaviour {
-	// Used as a tag.
+	
+	private StarDisplay starDisplay;
+
+	void Start() {
+		starDisplay = GameObject.FindObjectOfType<StarDisplay>();
+	}
+
+	public void AddStars(int amount) {
+		starDisplay.AddStars(amount);
+	}
 }
