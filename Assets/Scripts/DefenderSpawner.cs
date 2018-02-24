@@ -15,6 +15,7 @@ public class DefenderSpawner : MonoBehaviour {
 		parent = GameObject.Find("Defenders");
 		if (parent == null) {
 			parent = new GameObject("Defenders");
+			parent.transform.position.Set(0f, 0f, 0f);
 		}
 	}
 
